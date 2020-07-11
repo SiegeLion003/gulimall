@@ -17,11 +17,21 @@
         <module>gulimall-product</module>
         <module>gulimall-ware</module>
         <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>gulimall-common</module>
     </modules>
-   <!-- <properties>
-        <java.version>1.8</java.version>
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
+    <properties>
+<!--        <java.version>1.8</java.version>-->
+<!--        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>-->
+        <lombok.version>1.18.8</lombok.version>
+        <mybatis.version>3.3.2</mybatis.version>
+        <commons.lang.version>2.6</commons.lang.version>
     </properties>
+
+
+
+    <!--
+
 
 
 
@@ -37,6 +47,7 @@
         </dependencies>
     </dependencyManagement>
 
+-->
     <build>
         <plugins>
             <plugin>
@@ -48,6 +59,9 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
+
+
+
 
 </project>
