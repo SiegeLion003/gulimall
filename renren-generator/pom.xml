@@ -127,13 +127,37 @@
 			<artifactId>mongo-java-driver</artifactId>
 			<version>${mongo.version}</version>
 		</dependency>
+
+		<!--
+            开启热部署功能步骤
+        -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
-	<build>
+	<!--<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>-->
+	<!--  热部署需要用到此插件  -->
+	<build>
+		<finalName>自己的工程名字,也可以去掉此行代码,,主要看个人心情</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<fork>true</fork>
+					<addResources>true</addResources>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

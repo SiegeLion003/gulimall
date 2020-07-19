@@ -2,11 +2,19 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <parent>
+    <!--<parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>2.2.2.RELEASE</version>
+        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;
+    </parent>-->
+
+    <parent>
+        <groupId>com.atguigu.gulimall</groupId>
+        <artifactId>gulimall</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <!-- relativePath表示始终从仓库获取不从本地获取 -->
+        <!--<relativePath/>-->
     </parent>
     <groupId>com.atguigu.gulimall</groupId>
     <artifactId>gulimall-member</artifactId>
@@ -14,22 +22,56 @@
     <name>gulimall-member</name>
     <description>会员服务服务</description>
 
-    <properties>
+    <!--<properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.SR5</spring-cloud.version>
-    </properties>
+    </properties>-->
 
     <dependencies>
 
+        <!-- 通用工具包 -->
         <dependency>
             <groupId>com.atguigu.gulimall</groupId>
             <artifactId>gulimall-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
+        <!-- spring boot - start  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.10</version>
+        </dependency>
+
+        <!--mysql驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!--jdbc-->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>-->
+        <!-- spring整合mybatis jar包 当引入该jar包后  再引入mybatis-plus , mybatis plus不会生效 -->
+        <!--<dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>-->
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -47,27 +89,27 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--
+            开启热部署功能步骤
+        -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
-    <build>
+
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 </project>

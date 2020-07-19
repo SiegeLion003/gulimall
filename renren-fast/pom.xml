@@ -8,17 +8,24 @@
 	<packaging>jar</packaging>
 	<description>renren-fast</description>
 
-	<parent>
+	<!--<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.2.4.RELEASE</version>
+	</parent>-->
+	<parent>
+		<groupId>com.atguigu.gulimall</groupId>
+		<artifactId>gulimall</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<!-- relativePath表示始终从仓库获取不从本地获取 -->
+		<!--<relativePath/>-->
 	</parent>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<mybatisplus.version>3.3.1</mybatisplus.version>
+<!--		<mybatisplus.version>3.3.1</mybatisplus.version>-->
 		<mysql.version>8.0.17</mysql.version>
 		<mssql.version>4.0</mssql.version>
 		<oracle.version>11.2.0.3</oracle.version>
@@ -85,7 +92,7 @@
 		<dependency>
 			<groupId>com.baomidou</groupId>
 			<artifactId>mybatis-plus-boot-starter</artifactId>
-			<version>${mybatisplus.version}</version>
+			<version>${mybatis-plus.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>com.baomidou</groupId>
@@ -231,6 +238,16 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>${lombok.version}</version>
+		</dependency>
+
+		<!--
+            开启热部署功能步骤
+        -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
 		</dependency>
 	</dependencies>
 

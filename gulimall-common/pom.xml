@@ -3,14 +3,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>gulimall</artifactId>
         <groupId>com.atguigu.gulimall</groupId>
+        <artifactId>gulimall</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <!-- relativePath表示始终从仓库获取不从本地获取 -->
+        <!--<relativePath/>-->
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>gulimall-common</artifactId>
-    <build>
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -21,17 +24,12 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
 
     <dependencies>
 
-        <!-- mybatis-plus -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis.version}</version>
-        </dependency>
+
 
         <!-- lombok -->
         <dependency>
@@ -52,12 +50,7 @@
             <version>${commons.lang.version}</version>
         </dependency>
 
-        <!-- mysql驱动 -->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.17</version>
-        </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -72,6 +65,20 @@
             <version>5.1.0</version>
             <scope>compile</scope>
         </dependency>
+        <!-- mybatis-plus -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <!--  以下jar包注释掉, 改为各服务单独引用 -->
+        <!-- mysql驱动 -->
+        <!--<dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
+        </dependency>-->
+
     </dependencies>
 
 </project>
