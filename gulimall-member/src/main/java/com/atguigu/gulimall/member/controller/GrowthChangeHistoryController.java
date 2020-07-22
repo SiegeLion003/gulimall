@@ -1,5 +1,6 @@
 package com.atguigu.gulimall.member.controller;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.atguigu.gulimall.member.entity.GrowthChangeHistoryEntity;
+import com.atguigu.gulimall.member.feign.CouponFeignService;
 import com.atguigu.gulimall.member.service.GrowthChangeHistoryService;
 import com.atguigu.common.utils.PageUtils;
 import com.atguigu.common.utils.R;
@@ -30,7 +32,14 @@ import com.atguigu.common.utils.R;
 public class GrowthChangeHistoryController {
     @Autowired
     private GrowthChangeHistoryService growthChangeHistoryService;
+    @Resource
+    private CouponFeignService couponFeignService;
 
+    @RequestMapping("/feignList")
+    public R feignList(@RequestParam Map<String, Object> params){
+        R list = couponFeignService.membercoupons();
+        return list;
+    }
     /**
      * 列表
      */

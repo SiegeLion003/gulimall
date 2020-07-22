@@ -11,8 +11,9 @@
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>com.atguigu.gulimall</groupId>
     <artifactId>gulimall-common</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <!--<build>
         <plugins>
             <plugin>
@@ -70,6 +71,7 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
+
         </dependency>
         <!--  以下jar包注释掉, 改为各服务单独引用 -->
         <!-- mysql驱动 -->
@@ -78,7 +80,19 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql.version}</version>
         </dependency>-->
+        <!-- nacos 注册中心 引入 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
+        <!-- nacos 配置中心 引入 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
 
     </dependencies>
+
+
 
 </project>

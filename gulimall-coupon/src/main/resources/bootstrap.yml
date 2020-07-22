@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: gulimall-coupon
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+
+### 为了开发方便暂时先不使用配置中心  但是还可以读到 gulimall-coupon.properties
+### 方式一
+#        group: DEFAULT_GROUP
+#        file-extension: yaml #此处的名称必须和nacos中的dataId后缀一致
+#        namespace: 1e18f500-f9b9-4462-a3ec-4b3dac7c15f9 # 名称空间
+
+### 此种方式可以按类型将配置文件分开
+### 方式二
+#        ext-config:
+#          - data-id: datasource.yaml
+#            group: dev
+#            refresh: true
+#
+#          - data-id: mybatis.yaml
+#            group: dev
+#            refresh: true
+#
+#          - data-id: other.yaml
+#            group: dev
+#            refresh: true
